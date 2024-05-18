@@ -8,3 +8,22 @@ app:
         debug: true
         hide_banner: false
         hide_port: false
+  zap:
+    cores:
+      console:
+        type: stream
+        level: info
+        encoding: console
+        time_encoder: iso8601
+      file:
+        type: "file"
+        encoding: json
+        time_encoder: iso8601
+        file:
+          path: "/Users/i4erkasov/go/src/github.com/i4erkasov/go-ddd-cqrs/cmd/myapp/log/myapp"
+          max_backups: 7
+          max_age: 30
+          max_size: 32
+    caller: true
+    stacktrace: error
+    development: true
